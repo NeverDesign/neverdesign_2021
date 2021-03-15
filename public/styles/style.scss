@@ -1,0 +1,21 @@
+//
+// (C) Copyright 2021 by Mobility Quotient Solutions, Inc.
+//
+// $File: style.scss
+// $Purpose: Imports all the necessary .scss files for the project
+//
+
+//@import "icons";
+@import "reset";
+@import "settings";
+
+@import "third-party/bootstrap/bootstrap.scss";
+
+@import "typography";
+@import "layout";
+//@import "pages";
+@import "elements";
+//@import "forms";
+//@import "header";
+//@import "footer";
+//@import "collections";

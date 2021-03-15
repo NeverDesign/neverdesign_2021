@@ -1,19 +1,102 @@
-<!DOCTYPE html>
-<html>
+{% apply spaceless %}
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+        <title>
+            {% block title %}{{ title|default('Neverdesign.net') }}{% endblock %}
+        </title>
+
+        {# Mobile/Responsiveness #}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+        {% block analytics %}
         {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="/css/style.css">
+        {% endblock %}
+
+        {# Favicon #}
+
+
+        {# SEO - Executed on a page specific basis #}
+        {% block seo %}
+        {% endblock %}
+
+        {# Blocking Javascript to be executed in the header #}
+        {% block header_javascript %}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body {{- ' class="%s" '|format( (bodyClass is defined ? ' ' ~ bodyClass) )|raw -}} {{ bodyAttributes is defined ? bodyAttributes|raw : '' }}>
+    {# UI Header #}
+    {% block header %}
+        <heaeder id="header">
+            <div class="header-inner container">
+                <nav>
+                    <ul id="nav-primary" class="menu">
+                        <li class="menu-item">
+                            <a href="#">About</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="#">Folio</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="#">Skills</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="#">Say Hello</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </heaeder>
+    {% endblock header %}
+
+    {# UI Content #}
+    <main id="content">
+        {% block content %}
+            {# Populated by extended Twigs #}
+        {% endblock content %}
+    </main>
+
+    {# UI Footer #}
+    {% block footer %}
+        <footer>
+            <div class="footer-inner container">
+                <div class="container-copyright">
+                    <span>Copyright &copy; NeverDesign &mdash; {{ "now"|date("Y") }}</span>
+                </div>
+            </div>
+        </footer>
+    {% endblock footer %}
+
+    {# Async Javascript to be executed in the footer #}
+    {% block footer_javascript %}
+        {% if app.environment != 'dev' %}
+            {# Scripts - Prod #}
+            <script src="/js/third-party/jquery-3.6.0.min.js"></script>
+            <script src="/js/third-party/bootstrap.bundle.min.js"></script>
+{#            <script src="/js/base-min.js"></script>#}
+
+            {# Disable Javascript Debugging #}
+            <script type="text/javascript">
+                DEBUG_MODE = false;
+            </script>
+        {% else %}
+            {# Scripts - Dev #}
+            <script src="/scripts/third-party/jquery-3.6.0.js"></script>
+            <script src="/scripts/third-party/bootstrap.bundle.js"></script>
+{#            <script src="/scripts/base.js"></script>#}
+        {% endif %}
+    {% endblock %}
     </body>
 </html>
+{% endapply %}

@@ -1,0 +1,30 @@
+// Settings.scss
+
+// Shades
+$grey-darkest:	#141b22;
+$grey-medium:	#1b242e;
+$grey-light:	#323d48;
+
+// Colours
+$primary:		#FD331C;
+$secondary:		$grey-mediumt;
+
+// Fonts
+$font-standard: 'Source Sans Pro', sans-serif;
+
+// Spacing
+$space:			16px;
+$space-xs:		$space/4;		// 4px
+$space-sm:		$space/2;		// 8px
+$space-md:		$space*1.25;	// 20px
+$space-lg:		$space*1.5;		// 32px
+$space-xl:		$space*2;		// 48px
+$space-xxl:		$space*3.25;	// 64px
+$space-xxxl:	$space*4;		// 80px
+
+/**
+ * Bootstrap Overrides
+ */
+$body-color:				#FFFFFF;
+$body-bg:					$secondary;
+$font-family-base:			$font-standard;
