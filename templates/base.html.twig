@@ -37,7 +37,16 @@
     {% block header %}
         <heaeder id="header">
             <div class="header-inner container">
-                <nav>
+                <div class="container-logo">
+                    <a href="/">
+                        <picture class="logo">
+                            <source srcset="/images/logo.svg" type="image/svg">
+                            <img src="/images/logo.png" alt="SokoLocal">
+                        </picture>
+                    </a>
+                </div>
+
+                <nav class="container-nav">
                     <ul id="nav-primary" class="menu">
                         <li class="menu-item">
                             <a href="#">About</a>

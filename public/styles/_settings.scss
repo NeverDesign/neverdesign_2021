@@ -4,10 +4,11 @@
 $grey-darkest:	#141b22;
 $grey-medium:	#1b242e;
 $grey-light:	#323d48;
+$white:			#FFFFFF;
 
 // Colours
 $primary:		#FD331C;
-$secondary:		$grey-mediumt;
+$secondary:		$grey-medium;
 
 // Fonts
 $font-standard: 'Source Sans Pro', sans-serif;
@@ -22,9 +23,13 @@ $space-xl:		$space*2;		// 48px
 $space-xxl:		$space*3.25;	// 64px
 $space-xxxl:	$space*4;		// 80px
 
+$container-width-narrow: 900px;
+
 /**
  * Bootstrap Overrides
  */
-$body-color:				#FFFFFF;
-$body-bg:					$secondary;
+$body-color:				$white;
+$body-bg:					$grey-darkest;
+
 $font-family-base:			$font-standard;
+$font-weight-base:			300;

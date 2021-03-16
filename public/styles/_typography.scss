@@ -1,0 +1,59 @@
+/**
+ * Typography
+ */
+
+// TYPE ELEMENTS //
+.section {
+	.header {
+		display: inline-block;
+		border-bottom: 2px solid $primary;
+		margin-bottom: $space-md;
+
+		.title {
+			font-size: $h5-font-size;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-bottom: $space-xs;
+		}
+	}
+}
+
+// LISTS //
+.list-skills {
+	padding: 0;
+	list-style: none;
+
+	li {
+		border-bottom: 1px dotted $grey-light;
+		display: flex;
+			justify-content: space-between;
+		padding-bottom: $space-sm;
+		margin-bottom: $space-sm;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	@include media-breakpoint-up(md){
+		margin: 0 $space-xl 0 0;
+	}
+}
+
+// HELPERS //
+
+// Text Colours - Shades
+.text-grey-darkest			{ color: $grey-darkest!important; }
+.text-grey-medium			{ color: $grey-medium!important; }
+.text-grey-light			{ color: $grey-light!important; }
+
+// Text Colours
+.text-primary, .text-red	{ color: $primary!important; }
+
+// BG Colours - Shades
+.bg-grey-darkest		{ color: $grey-darkest!important; }
+.bg-grey-medium			{ color: $grey-medium!important; }
+.bg-grey-light			{ color: $grey-light!important; }
+
+// BG Colours
+.bg-primary, .bg-red	{ color: $primary!important; }

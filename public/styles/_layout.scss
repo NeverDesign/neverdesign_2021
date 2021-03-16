@@ -1,2 +1,29 @@
-// Layout.scss
+/**
+ * LAYOUT
+ */
 
+// HEADER //
+#header {
+	.header-inner {
+		display: flex;
+			align-items: center;
+			justify-content: space-between;
+	}
+
+	.container-logo {
+		flex: 0 0 70px;
+	}
+
+	.container-nav {
+		flex: 0 1 auto;
+	}
+}
+
+// CONTAINERS //
+.container {
+	&.width-narrow {
+		@include media-breakpoint-up(md){
+			max-width: $container-width-narrow;
+		}
+	}
+}

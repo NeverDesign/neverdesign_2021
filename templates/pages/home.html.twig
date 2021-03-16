@@ -2,46 +2,66 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-	<section class="section container-hero">
+	<section class="section section-hero">
 		<div class="hero-inner container">
 			<h1 class="visually-hidden">Welcome to NeverDesign.net&mdash;The portfolio website of Jon De Araujo</h1>
 
-			<h2>
-				<b>UX/UI</b>
-				<span class="font-weight-bold text-red">+</span>
-				<span class="text-label text-first">Designer</span>
-				<span class="text-label text-last">Developer</span>
-			</h2>
-		</div>
-	</section>
-
-	<section id="about" class="section container container-about">
-		<div class="section-inner container">
-			<div class="header">
-				<h3>About</h3>
-				<p class="h1">I create imaginative, thoughtful and accessible digital experiences.</p>
-				<p>Hi, my name is Jon. I’m a UX/UI Designer and Front End developer.Since finishing a Bachelors Degree in Creative Industries (Communication Design) in 2007 I have worked in the industry at a wide variety of organizations while freelancing in-between. I’m a passionate designer and a creative at heart with wise in the ways of UX/UI and skilled in design and development principals.</p>
+			<div class="title">
+				<div>
+					<b>UX/UI</b>
+					<span class="fw-bold text-red">+</span>
+				</div>
+				<div>
+					<span class="text-label text-first">Designer<b class="text-red">.</b></span>
+					<span class="text-label text-last">Developer<b class="text-red">.</b></span>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="folio" class="section container container-folio">
-		<div class="section-inner container">
-			<div class="header">
-				<h3>Folio</h3>
+	<section id="about" class="section section-about">
+		<div class="section-inner container width-narrow">
+			<div class="row">
+				<div class="col-12 col-md-4">
+					<div class="container-image">
+						<img class="img-profile" src="/images/profile.png" alt="Jon De Araujo - Profile Picture" width="240"></img>
+					</div>
+				</div>
+				<div class="col-12 col-md-8">
+					<div class="header">
+						<h2 class="title">About</h2>
+					</div>
+
+					<div class="content">
+						<p class="h3 fw-light">I create imaginative, thoughtful and accessible digital experiences.</p>
+						<p>Hi, my name is Jon. I’m a UX/UI Designer and developer. Since finishing a Bachelors Degree in Creative Industries (Communication Design) in 2007&mdash;over 13 years of experience!</p>
+
+						<p>I have worked in the industry at a wide variety of organizations while freelancing in-between. I’m a passionate designer and a creative at heart with wise in the ways of UX/UI and skilled in design and development principals.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="skills" class="section container container-skills">
+	<section id="folio" class="section section-folio">
 		<div class="section-inner container">
 			<div class="header">
-				<h3>Skills</h3>
+				<h2 class="title">Folio</h2>
+			</div>
+		</div>
+	</section>
+
+	<section id="skills" class="section section-skills">
+		<div class="section-inner container">
+			<div class="text-center">
+				<div class="header">
+					<h2 class="title">Skills</h3>
+				</div>
 			</div>
 
 			<div class="content row">
 				<div class="col-12 col-md-4">
-					<h4>Design</h4>
+					<h3 class="h5 text-uppercase">Design</h3>
 					<ul class="list-skills">
 						<li><p>Concept Design</p> <p>10/10</p></li>
 						<li><p>Wireframing</p> <p>10/10</p></li>
@@ -56,7 +76,7 @@
 				</div>
 
 				<div class="col-12 col-md-4">
-					<h4>Development</h4>
+					<h3 class="h5 text-uppercase">Development</h3>
 					<ul class="list-skills">
 						<li><p>HTML5</p> <p>10/10</p></li>
 						<li><p>CSS3</p> <p>10/10</p></li>
@@ -74,7 +94,7 @@
 				</div>
 
 				<div class="col-12 col-md-4">
-					<h4>Others</h4>
+					<h3 class="h5 text-uppercase">Others</h3>
 					<ul class="list-skills">
 						<li><p>Icon Fonts</p> <p>10/10</p></li>
 						<li><p>MacOS</p> <p>10/10</p></li>
@@ -96,10 +116,12 @@
 		</div>
 	</section>
 
-	<section id="contact" class="section container container-contact">
+	<section id="contact" class="section section-contact">
 		<div class="section-inner container">
-			<div class="header">
-				<h3>Say Hello</h3>
+			<div class="text-center">
+				<div class="header">
+					<h2 class="title">Say Hello</h2>
+				</div>
 			</div>
 		</div>
 	</section>

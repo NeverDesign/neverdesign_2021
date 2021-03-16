@@ -1,5 +1,146 @@
-// Elements
+/**
+ * Elements
+ */
 
+// HEADER //
+.container-logo {
+	width: 70px;
+
+	a {
+		display: block;
+	}
+
+	.logo {
+		width: 100%;
+
+		* {
+			width: 100%;
+		}
+	}
+}
+
+.menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	.menu-item {
+		display: block;
+		transition-duration: 0.3s;
+
+		a {
+			display: block;
+			color: inherit;
+			font-weight: 600;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			padding: 0 $space-xl;
+
+			&:hover,
+			&:hover:active {
+				color: $red;
+			}
+		}
+	}
+}
+
+// SECTIONS //
 .section {
+	padding-top: $space-xxxl;
+	padding-bottom: $space-xxxl;
+	position: relative;
+}
+
+.section-hero {
 	margin-bottom: $space-xxl;
+
+	.title {
+		display: flex;
+			justify-content: center;
+			align-items: center;
+		font-size: 3.5em;
+		line-height: 1.2em;
+
+		b {
+			font-weight: 700;
+		}
+
+		div:first-child {
+			span {
+				display: inline-block;
+				padding: 0 $space-sm;
+			}
+		}
+
+		div:last-child {
+			font-weight: 300;
+
+			span {
+				display: block;
+			}
+		}
+	}
+}
+
+.section-about {
+	margin-top: $space-lg;
+	background: $grey-medium;
+
+	&:before {
+		$height: 35px;
+		content: ' ';
+		background-image: linear-gradient(to left top, $grey-medium 0%, $grey-medium 50%, transparent 50%);
+		width: 100%;
+		height: $height;
+		position: absolute;
+		top: -$height;
+		z-index: 1;
+	}
+
+	.container-image{
+		border-radius: 999px;
+		overflow: hidden;
+		border: 5px solid lighten($grey-light, 55%);
+		width: 250px;
+		height: 250px;
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.section-folio {
+	background: $grey-light;
+}
+
+.section-skills {
+	background: $grey-medium;
+}
+
+.section-contact {
+	&:before {
+		$height: 35px;
+		content: ' ';
+		background-image: linear-gradient(to left top, $grey-darkest 0%, $grey-darkest 50%, transparent 50%);
+		width: 100%;
+		height: $height;
+		position: absolute;
+		top: -$height;
+		z-index: 1;
+	}
+}
+
+// FOOTER //
+footer {
+	.footer-inner {
+		padding-top: $space-md;
+		padding-bottom: $space-md;
+		text-align: center;
+		font-size: $font-size-sm;
+		color: lighten($grey-light, 35%);
+	}
 }
