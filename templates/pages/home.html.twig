@@ -4,24 +4,84 @@
 {% set projects = [
 	{
 		"title": "Soko Local",
-		"image": "/images/projects/soko-local.png"
+		"image": "/images/projects/soko-local.png",
+		"description":
+			"At MQLabs we try coming up with innovative and practical solutions to solve problems. In this case we
+			put our minds towards creating a search engine designed to promote and encourage shopping locally. The site
+			is fully responsive, accessible and fast. If you don't believe me, run a Lighthouse report on it :D",
+		"url": "https://sokolocal.com",
+		"tasks": [
+			"UX", "Design", "HTML5", "SCSS", "CSS3", "JS", "jQuery", "Twig", "Symfony"
+		]
 	},
 	{
 		"title": "MQ Labs",
-		"image": "/images/projects/mq-labs.png"
+		"image": "/images/projects/mq-labs.png",
+		"description": "The MQLabs brand and site came to fruition in late 2020 when the team at MQ decided that it was
+						time to separate out the projects and ideas we came up with internally from the work we do for our
+						clients. This single page site was designed and built as an intermediary while our CMS powered site
+						is in progress.",
+		"url": "https://mqlabs.ca",
+		"tasks": [
+			"Concept Design", "Branding", "HTML5", "SCSS", "CSS3", "jQuery"
+		]
 	},
 	{
 		"title": "JustPickup",
-		"image": "/images/projects/just-pickup.png"
+		"image": "/images/projects/just-pickup.png",
+		"description": "When the world as we knew it changed in 2019 we put our heads together at MQLabs and thought how
+						can we empower businesses and individuals to operate in a safe, minimal contact and efficient manner.
+						The solution was JustPickup, a business and product directory with online product reservations and pick-up
+						scheduling.",
+		"url": "https://justpickup.ca",
+		"tasks": [
+			"Concept Design", "Wire-framing", "Design", "HTML5", "CSS3", "JS", "jQuery", "AngularJS", "Symfony", "Twig"
+		]
 	},
 	{
 		"title": "JustBeer",
-		"image": "/images/projects/just-beer.png"
+		"image": "/images/projects/just-beer.png",
+		"description": "An oldie but a goodie, and who doesn't love beer! JustBeer is an excellent example of an internal project
+						that a passionate small group of people including myself turned into a successful online community and resource
+						with a companion iPhone and Android app that challange UX norms to provide the best experience for discovering
+						all things beer.",
+		"url": "https://justbeerapp.ca",
+		"tasks": [
+			"Concept Design", "Wire-framing", "Design", "HTML5", "CSS3", "JS", "jQuery", "AngularJS", "Symfony", "Twig", "React Native"
+		]
+	},
+] %}
+
+{% set clients = [
+	{
+		"label": "Winsight",
+		"image": "/images/clients/winsight.png",
+		"url": "",
+	},
+	{
+		"label": "Technomic",
+		"image": "/images/clients/technomic.png",
+		"url": "",
+	},
+	{
+		"label": "Compliance Safe",
+		"image": "/images/clients/compliance-safe.png",
+		"url": "",
+	},
+	{
+		"label": "Meticulon",
+		"image": "/images/clients/meticulon.png",
+		"url": "",
+	},
+	{
+		"label": "Patch",
+		"image": "/images/clients/patch.png",
+		"url": "",
 	},
 ] %}
 
 {% block content %}
-	<section class="section section-hero">
+	<section class="section section-hero" data-anchor="true">
 		<div class="hero-inner container">
 			<h1 class="visually-hidden">Welcome to NeverDesign.net&mdash;The portfolio website of Jon De Araujo</h1>
 
@@ -38,12 +98,12 @@
 		</div>
 	</section>
 
-	<section id="about" class="section section-about">
+	<section id="about" class="section section-about" data-anchor="true">
 		<div class="section-inner container width-narrow">
 			<div class="row">
-				<div class="col-12 col-md-4">
+				<div class="col-12 col-md-4 d-flex align-items-center">
 					<div class="container-image">
-						<img class="img-profile" src="/images/profile.png" alt="Jon De Araujo - Profile Picture" width="200"></img>
+						<img class="img-profile" src="/images/profile.png" alt="Jon De Araujo - Profile Picture" width="200" height="200" />
 					</div>
 				</div>
 				<div class="col-12 col-md-8">
@@ -60,55 +120,81 @@
 		</div>
 	</section>
 
-	<section id="folio" class="section section-folio">
-		<div class="section-inner container">
-			<div class="row">
-				<div class="col-12">
-					<div class="text-center">
-						<div class="header">
-							<h2 class="title">Folio</h3>
-						</div>
-					</div>
-
-					<div class="collection">
-						{% for item in projects %}
-						<div class="item item-project">
-							<div class="item-inner">
-								<div class="item-media">
-									<img src="{{ item.image }}" alt="{{ item.title }}" width="200" />
-								</div>
-							</div>
-						</div>
-						{% endfor %}
-					</div>
+	<section id="folio" class="section section-folio" data-anchor="true">
+		<div class="section-inner">
+			<div class="text-center">
+				<div class="header">
+					<h2 class="title">Folio</h2>
 				</div>
 			</div>
 
-			{#  <div class="row">
-				<div class="col-12">
-					<div class="header">
-						<h4 class="subtitle">Brands I've worked with</h4>
-					</div>
+			<div id="carousel-projects" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					{% for item in projects %}
+					<button type="button" data-bs-target="#carousel-projects" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" aria-current="true"{% endif%} aria-label="{{ item.title }}"></button>
+					{% endfor %}
+				</div>
+				<div class="carousel-inner">
+					{% for item in projects %}
+					<div class="carousel-item item-project {{ loop.first ? 'active' : '' }}" >
+						<div class="item-inner row justify-content-center">
+							<div class="item-media col-12 col-md-6 col-lg">
+								<img src="{{ item.image }}" alt="{{ item.title }}" width="400" height="400" />
+							</div>
+							<div class="item-content col-12 col-sm-10 col-md-6 col-lg">
+								<h3 class="h2">{{ item.title }}</h3>
 
-					<div class="collection">
-						<div class="item item-logo">
-							<div class="item-inner">
-								<div class="item-media">
-									<img src="{{ item.image }}" alt="{{ item.title }}" width="200" /> 
-								</div>
+								<p>{{ item.description }}</p>
+
+								<p><a href="{{ item.url }}" class="btn btn-outline-primary-white" target="_blank" rel="noreferrer">Visit Site</a></p>
+
+								<h4 class="h6 text-uppercase fw-bolder">Contributions</h4>
+								<p>
+									{% for task in item.tasks %}
+										<span class="badge bg-grey-lightest text-grey-darkest">{{ task }}</span>
+									{% endfor %}
+								</p>
+
 							</div>
 						</div>
 					</div>
+					{% endfor %}
 				</div>
-			</div>#}
+				<button class="carousel-control-prev" type="button" data-bs-target="#carousel-projects"  data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carousel-projects"  data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+
+			<div class="text-center pt-4">
+				<div class="header">
+					<h4 class="title">Brands I've worked with</h4>
+				</div>
+			</div>
+
+			<div class="collection">
+				{% for item in clients %}
+				<div class="item item-logo">
+					<div class="item-inner">
+						<div class="item-media">
+							<img src="{{ item.image }}" alt="{{ item.label }}" width="200" height="90" />
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
 		</div>
 	</section>
 
-	<section id="skills" class="section section-skills">
+	<section id="skills" class="section section-skills" data-anchor="true">
 		<div class="section-inner container">
 			<div class="text-center">
 				<div class="header">
-					<h2 class="title">Skills</h3>
+					<h2 class="title">Skills</h2>
 				</div>
 			</div>
 
@@ -119,15 +205,15 @@
 						Design
 					</h3>
 					<ul class="list-skills">
-						<li><p>Concept Design</p> <p>10/10</p></li>
-						<li><p>Wire-framing</p> <p>10/10</p></li>
-						<li><p>Design</p> <p>10/10</p></li>
-						<li><p>Illustration</p> <p>10/10</p></li>
-						<li><p>UX Mock-ups</p> <p>10/10</p></li>
-						<li><p>Adobe PhotoShop</p> <p>9/10</p></li>
-						<li><p>Adobe Illustrator</p> <p>9/10</p></li>
-						<li><p>Adobe XD</p> <p>8.5/10</p></li>
-						<li><p>Adobe InDesign</p> <p>8/10</p></li>
+						<li><p>Concept Design</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Wire-framing</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Design</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Illustration</p> <p>10<sub>/10</sub></p></li>
+						<li><p>UX Mock-ups</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Adobe PhotoShop</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Adobe Illustrator</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Adobe XD</p> <p>8.5<sub>/10</sub></p></li>
+						<li><p>Adobe InDesign</p> <p>8<sub>/10</sub></p></li>
 					</ul>
 				</div>
 
@@ -137,17 +223,17 @@
 						Development
 					</h3>
 					<ul class="list-skills">
-						<li><p>HTML5</p> <p>10/10</p></li>
-						<li><p>CSS3</p> <p>10/10</p></li>
-						<li><p>SASS/SCSS/LESS</p> <p>10/10</p></li>
-						<li><p>JS</p> <p>9/10</p></li>
-						<li><p>Typescript</p> <p>7/10</p></li>
-						<li><p>jQuery</p> <p>9/10</p></li>
-						<li><p>Angular.js</p> <p>8/10</p></li>
-						<li><p>React</p> <p>7/10</p></li>
-						<li><p>PHP</p> <p>9/10</p></li>
-						<li><p>Twig</p> <p>10/10</p></li>
-						<li><p>Symfony</p> <p>8/10</p></li>
+						<li><p>HTML5</p> <p>10<sub>/10</sub></p></li>
+						<li><p>CSS3</p> <p>10<sub>/10</sub></p></li>
+						<li><p>SASS/SCSS/LESS</p> <p>10<sub>/10</sub></p></li>
+						<li><p>JS</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Typescript</p> <p>7<sub>/10</sub></p></li>
+						<li><p>jQuery</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Angular.js</p> <p>8<sub>/10</sub></p></li>
+						<li><p>React</p> <p>7<sub>/10</sub></p></li>
+						<li><p>PHP</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Twig</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Symfony</p> <p>8<sub>/10</sub></p></li>
 					</ul>
 				</div>
 
@@ -157,16 +243,16 @@
 						Others
 					</h3>
 					<ul class="list-skills">
-						<li><p>Icon Fonts</p> <p>10/10</p></li>
-						<li><p>Google Lighthouse</p> <p>10/10</p></li>
-						<li><p>MacOS</p> <p>10/10</p></li>
-						<li><p>Windows</p> <p>9/10</p></li>
-						<li><p>Linux</p> <p>8/10</p></li>
-						<li><p>Git/SVN</p> <p>9/10</p></li>
-						<li><p>Codekit</p> <p>9/10</p></li>
-						<li><p>SEO (OG, JSONLD, AMP)</p> <p>9/10</p></li>
-						<li><p>DQL/SQL</p> <p>9/10</p></li>
-						<li><p>CMS - WP, Bolt, Drupal</p> <p>8/10</p></li>
+						<li><p>Icon Fonts</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Google Lighthouse</p> <p>10<sub>/10</sub></p></li>
+						<li><p>MacOS</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Windows</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Linux</p> <p>8<sub>/10</sub></p></li>
+						<li><p>Git/SVN</p> <p>9<sub>/10</sub></p></li>
+						<li><p>Codekit</p> <p>9<sub>/10</sub></p></li>
+						<li><p>SEO (OG, JSONLD, AMP)</p> <p>9<sub>/10</sub></p></li>
+						<li><p>DQL/SQL</p> <p>9<sub>/10</sub></p></li>
+						<li><p>CMS - WP, Bolt, Drupal</p> <p>8<sub>/10</sub></p></li>
 
 						{# <li><p>AWS - S3</p> <p>10/10</p></li> #}
 						{# <li><p>Azure</p> <p>10/10</p></li> #}
@@ -177,13 +263,61 @@
 		</div>
 	</section>
 
-	<section id="contact" class="section section-contact">
-		<div class="section-inner container">
-			{# <div class="text-center">
+	<section id="contact" class="section section-contact" data-anchor="true">
+		<div class="section-inner container width-narrow">
+			<div class="text-center">
 				<div class="header">
 					<h2 class="title">Say Hello</h2>
 				</div>
-			</div> #}
+			</div>
+
+{#			<form id="say-hello">#}
+{#				<div class="mb-3">#}
+{#					<label for="name" class="form-label">Name</label>#}
+{#					<input type="text" class="form-control" id="name" placeholder="Your Name">#}
+{#				</div>#}
+{#				<div class="mb-3">#}
+{#					<label for="email" class="form-label">Email</label>#}
+{#					<input type="email" class="form-control" id="email" placeholder="Your Email i.e. name@email.com">#}
+{#				</div>#}
+{#				<div class="mb-3">#}
+{#					<label for="exampleFormControlTextarea1" class="form-label">Message</label>#}
+{#					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>#}
+{#				</div>#}
+
+{#				<div class="text-center">#}
+{#				<button type="submit" class="btn btn-primary">#}
+{#					<span class="icon icon-chat"></span>#}
+{#					Send Message#}
+{#				</button>#}
+{#				</div>#}
+{#			</form>#}
+
+			<div class="collection">
+				<div class="item item-social">
+					<div class="item-inner">
+						<a aria-label="Send a message" href="#" class="item-content" onclick="UI.sendMessage(); return false;">
+							<span class="icon icon-chat"></span>
+						</a>
+					</div>
+				</div>
+
+				<div class="item item-social">
+					<div class="item-inner">
+						<a aria-label="LinkedIn" href="https://www.linkedin.com/in/jon-de-araujo-7a767241" rel="noreferrer" class="item-content" target="_blank">
+							<span class="icon icon-linkedin-square"></span>
+						</a>
+					</div>
+				</div>
+
+				<div class="item item-social">
+					<div class="item-inner">
+						<a aria-label="Github" href="https://github.com/neverdesign" class="item-content" rel="noreferrer" target="_blank">
+							<span class="icon icon-git-square"></span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 {% endblock content %}

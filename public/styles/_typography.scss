@@ -15,6 +15,13 @@
 			font-weight: 600;
 			margin-bottom: $space-xs;
 		}
+
+		.sub-title {
+			font-size: $h6-font-size;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-bottom: $space-xs;
+		}
 	}
 }
 
@@ -40,6 +47,12 @@
 	}
 }
 
+// BADGES //
+.badge {
+	display: inline-block;
+	text-transform: uppercase;
+}
+
 // HELPERS //
 
 // Text Colours - Shades
@@ -51,9 +64,10 @@
 .text-primary, .text-red	{ color: $primary!important; }
 
 // BG Colours - Shades
-.bg-grey-darkest		{ color: $grey-darkest!important; }
-.bg-grey-medium			{ color: $grey-medium!important; }
-.bg-grey-light			{ color: $grey-light!important; }
+.bg-grey-darkest		{ background-color: $grey-darkest!important; }
+.bg-grey-medium			{ background-color: $grey-medium!important; }
+.bg-grey-light			{ background-color: $grey-light!important; }
+.bg-grey-lightest		{ background-color: $grey-lightest!important; }
 
 // BG Colours
-.bg-primary, .bg-red	{ color: $primary!important; }
+.bg-primary, .bg-red	{ background-color: $primary!important; }

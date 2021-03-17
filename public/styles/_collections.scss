@@ -1,6 +1,8 @@
-// Collections.scss
+/**
+ * COLLECTIONS
+ */
 
-// COLLECTIONS //
+// COLLECTION CONTAINERS //
 .collection {
 	display: flex;
 		flex-wrap: wrap;
@@ -24,10 +26,77 @@
 	}
 }
 
+// Item Project - used in Carousel
 .item-project {
-	flex: 1 1 50%;
+	.item-media {
+		margin-bottom: $space-lg;
+		text-align: center;
 
-	@include media-breakpoint-up(md) {
-		flex: 1 1 25%;
+		img {
+			width: auto;
+			height: 300px;
+		}
+	}
+
+	.badge {
+		margin-right: $space-xs;
+	}
+
+	@include media-breakpoint-up(md){
+		.item-media {
+			margin-bottom: 0;
+
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 300px;
+			}
+		}
+	}
+}
+
+// Item Logo
+.item-logo {
+	flex: 1 0 33%;
+
+	@include media-breakpoint-up(md){
+		flex: 0 0 20%;
+	}
+
+	.item-inner {
+		display: flex;
+		margin: 0 $space-sm $space;
+	}
+
+	.item-media {
+		width: 100%;
+		height: 90px;
+		display: flex;
+
+		img {
+			width: auto;
+			max-width: 100%;
+			max-height: 100%;
+			margin: 0 auto;
+			object-fit: contain;
+		}
+	}
+}
+
+.item-social {
+	a {
+		display: block;
+		font-size: 24px;
+		text-decoration: none;
+		border: 2px solid $white;
+		border-radius: 999px;
+		width: 56px;
+		height: 56px;
+		line-height: 56px;
+		text-align: center;
+
+		.icon {
+			top: -4px;
+		}
 	}
 }

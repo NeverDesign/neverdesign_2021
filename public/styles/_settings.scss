@@ -4,10 +4,12 @@
 $grey-darkest:	#141b22;
 $grey-medium:	#1b242e;
 $grey-light:	#323d48;
+$grey-lightest:	lighten($grey-light, 55%);
 $white:			#FFFFFF;
+$red:			#FD331C;
 
 // Colours
-$primary:		#FD331C;
+$primary:		$red;
 $secondary:		$grey-medium;
 
 // Fonts
