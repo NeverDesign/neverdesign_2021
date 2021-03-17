@@ -1,0 +1,33 @@
+// Collections.scss
+
+// COLLECTIONS //
+.collection {
+	display: flex;
+		flex-wrap: wrap;
+}
+
+// ITEMS //
+.item {
+	margin-bottom: $space-md;
+
+	.item-inner {
+		margin-left: -$space/2;
+		margin-right: -$space/2;
+		padding-left: $space;
+		padding-right: $space;
+	}
+
+	.item-media {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.item-project {
+	flex: 1 1 50%;
+
+	@include media-breakpoint-up(md) {
+		flex: 1 1 25%;
+	}
+}

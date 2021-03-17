@@ -2,8 +2,31 @@
  * LAYOUT
  */
 
+body {
+	min-width: 320px;
+	padding-top: $space-xxl;
+
+	&.menu-open {
+		position: absolute;
+		width: 100%;
+
+		#header {
+			bottom: 0;
+			background: transparentize($secondary, 0.5);
+		}
+	}
+}
+
 // HEADER //
 #header {
+	position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+	
+	backdrop-filter: blur(3px);
+
 	.header-inner {
 		display: flex;
 			align-items: center;
@@ -16,6 +39,10 @@
 
 	.container-nav {
 		flex: 0 1 auto;
+	}
+
+	@include media-breakpoint-up(md){
+		background: none;
 	}
 }
 

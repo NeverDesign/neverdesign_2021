@@ -1,6 +1,25 @@
 {# Page: Home #}
 {% extends 'base.html.twig' %}
 
+{% set projects = [
+	{
+		"title": "Soko Local",
+		"image": "/images/projects/soko-local.png"
+	},
+	{
+		"title": "MQ Labs",
+		"image": "/images/projects/mq-labs.png"
+	},
+	{
+		"title": "JustPickup",
+		"image": "/images/projects/just-pickup.png"
+	},
+	{
+		"title": "JustBeer",
+		"image": "/images/projects/just-beer.png"
+	},
+] %}
+
 {% block content %}
 	<section class="section section-hero">
 		<div class="hero-inner container">
@@ -24,7 +43,7 @@
 			<div class="row">
 				<div class="col-12 col-md-4">
 					<div class="container-image">
-						<img class="img-profile" src="/images/profile.png" alt="Jon De Araujo - Profile Picture" width="240"></img>
+						<img class="img-profile" src="/images/profile.png" alt="Jon De Araujo - Profile Picture" width="200"></img>
 					</div>
 				</div>
 				<div class="col-12 col-md-8">
@@ -34,9 +53,7 @@
 
 					<div class="content">
 						<p class="h3 fw-light">I create imaginative, thoughtful and accessible digital experiences.</p>
-						<p>Hi, my name is Jon. I’m a UX/UI Designer and developer. Since finishing a Bachelors Degree in Creative Industries (Communication Design) in 2007&mdash;over 13 years of experience!</p>
-
-						<p>I have worked in the industry at a wide variety of organizations while freelancing in-between. I’m a passionate designer and a creative at heart with wise in the ways of UX/UI and skilled in design and development principals.</p>
+						<p>Hi, my name is Jon. I’m a UX/UI Designer and developer. I’m a passionate designer and a creative at heart wise in the ways of UX/UI and skilled in design and development principals. Since finishing a Bachelors Degree in Creative Industries (Communication Design) in 2007 I have worked in the industry at a wide variety of organizations internationally and freelanced in-between. </p>
 					</div>
 				</div>
 			</div>
@@ -45,9 +62,45 @@
 
 	<section id="folio" class="section section-folio">
 		<div class="section-inner container">
-			<div class="header">
-				<h2 class="title">Folio</h2>
+			<div class="row">
+				<div class="col-12">
+					<div class="text-center">
+						<div class="header">
+							<h2 class="title">Folio</h3>
+						</div>
+					</div>
+
+					<div class="collection">
+						{% for item in projects %}
+						<div class="item item-project">
+							<div class="item-inner">
+								<div class="item-media">
+									<img src="{{ item.image }}" alt="{{ item.title }}" width="200" />
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
+
+			{#  <div class="row">
+				<div class="col-12">
+					<div class="header">
+						<h4 class="subtitle">Brands I've worked with</h4>
+					</div>
+
+					<div class="collection">
+						<div class="item item-logo">
+							<div class="item-inner">
+								<div class="item-media">
+									<img src="{{ item.image }}" alt="{{ item.title }}" width="200" /> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>#}
 		</div>
 	</section>
 
@@ -61,55 +114,63 @@
 
 			<div class="content row">
 				<div class="col-12 col-md-4">
-					<h3 class="h5 text-uppercase">Design</h3>
+					<h3 class="h6 text-center text-uppercase">
+						<span class="icon icon-design text-red"></span>
+						Design
+					</h3>
 					<ul class="list-skills">
 						<li><p>Concept Design</p> <p>10/10</p></li>
-						<li><p>Wireframing</p> <p>10/10</p></li>
+						<li><p>Wire-framing</p> <p>10/10</p></li>
 						<li><p>Design</p> <p>10/10</p></li>
 						<li><p>Illustration</p> <p>10/10</p></li>
-						<li><p>UX Mockups</p> <p>10/10</p></li>
-						<li><p>Adobe Photoshop</p> <p>10/10</p></li>
-						<li><p>Adobe Illustrator</p> <p>10/10</p></li>
-						<li><p>Adobe XD</p> <p>10/10</p></li>
-						<li><p>Adobe InDesign</p> <p>10/10</p></li>
+						<li><p>UX Mock-ups</p> <p>10/10</p></li>
+						<li><p>Adobe PhotoShop</p> <p>9/10</p></li>
+						<li><p>Adobe Illustrator</p> <p>9/10</p></li>
+						<li><p>Adobe XD</p> <p>8.5/10</p></li>
+						<li><p>Adobe InDesign</p> <p>8/10</p></li>
 					</ul>
 				</div>
 
 				<div class="col-12 col-md-4">
-					<h3 class="h5 text-uppercase">Development</h3>
+					<h3 class="h6 text-center text-uppercase">
+						<span class="icon icon-development text-red"></span>
+						Development
+					</h3>
 					<ul class="list-skills">
 						<li><p>HTML5</p> <p>10/10</p></li>
 						<li><p>CSS3</p> <p>10/10</p></li>
-						<li><p>SASS/SCSS</p> <p>10/10</p></li>
-						<li><p>Less</p> <p>10/10</p></li>
-						<li><p>JS</p> <p>10/10</p></li>
-						<li><p>Typescript</p> <p>10/10</p></li>
-						<li><p>jQuery</p> <p>10/10</p></li>
-						<li><p>Angular.js</p> <p>10/10</p></li>
-						<li><p>React</p> <p>10/10</p></li>
-						<li><p>PHP</p> <p>10/10</p></li>
+						<li><p>SASS/SCSS/LESS</p> <p>10/10</p></li>
+						<li><p>JS</p> <p>9/10</p></li>
+						<li><p>Typescript</p> <p>7/10</p></li>
+						<li><p>jQuery</p> <p>9/10</p></li>
+						<li><p>Angular.js</p> <p>8/10</p></li>
+						<li><p>React</p> <p>7/10</p></li>
+						<li><p>PHP</p> <p>9/10</p></li>
 						<li><p>Twig</p> <p>10/10</p></li>
-						<li><p>Symfony</p> <p>10/10</p></li>
+						<li><p>Symfony</p> <p>8/10</p></li>
 					</ul>
 				</div>
 
 				<div class="col-12 col-md-4">
-					<h3 class="h5 text-uppercase">Others</h3>
+					<h3 class="h6 text-center text-uppercase">
+						<span class="icon icon-other text-red"></span>
+						Others
+					</h3>
 					<ul class="list-skills">
 						<li><p>Icon Fonts</p> <p>10/10</p></li>
+						<li><p>Google Lighthouse</p> <p>10/10</p></li>
 						<li><p>MacOS</p> <p>10/10</p></li>
-						<li><p>Windows</p> <p>10/10</p></li>
-						<li><p>Linux</p> <p>10/10</p></li>
-						<li><p>Git</p> <p>10/10</p></li>
-						<li><p>Codekit</p> <p>10/10</p></li>
-						<li><p>SEO (OG, JSONLD, AMP)</p> <p>10/10</p></li>
-						<li><p>DQL/SQL</p> <p>10/10</p></li>
-						<li><p>WordPress</p> <p>10/10</p></li>
-						<li><p>Bolt</p> <p>10/10</p></li>
-						<li><p>Drupal</p> <p>10/10</p></li>
-						<li><p>AWS - S3</p> <p>10/10</p></li>
-						<li><p>Azure</p> <p>10/10</p></li>
-						<li><p>Razor</p> <p>10/10</p></li>
+						<li><p>Windows</p> <p>9/10</p></li>
+						<li><p>Linux</p> <p>8/10</p></li>
+						<li><p>Git/SVN</p> <p>9/10</p></li>
+						<li><p>Codekit</p> <p>9/10</p></li>
+						<li><p>SEO (OG, JSONLD, AMP)</p> <p>9/10</p></li>
+						<li><p>DQL/SQL</p> <p>9/10</p></li>
+						<li><p>CMS - WP, Bolt, Drupal</p> <p>8/10</p></li>
+
+						{# <li><p>AWS - S3</p> <p>10/10</p></li> #}
+						{# <li><p>Azure</p> <p>10/10</p></li> #}
+						{# <li><p>Razor</p> <p>10/10</p></li> #}
 					</ul>
 				</div>
 			</div>
@@ -118,11 +179,11 @@
 
 	<section id="contact" class="section section-contact">
 		<div class="section-inner container">
-			<div class="text-center">
+			{# <div class="text-center">
 				<div class="header">
 					<h2 class="title">Say Hello</h2>
 				</div>
-			</div>
+			</div> #}
 		</div>
 	</section>
 {% endblock content %}
