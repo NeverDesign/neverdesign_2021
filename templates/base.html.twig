@@ -105,6 +105,18 @@
 
     {# UI Footer #}
     {% block footer %}
+        <div class="mobile-menu-toggle">
+            <a class="menu-toggle" href="#" onclick="UI.toggleMenu(this); return false;" aria-label="Toggle Menu">
+                <span class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="text">Menu</span>
+            </a>
+        </div>
+
         <footer>
             <div class="footer-inner container">
                 <div class="container-copyright">

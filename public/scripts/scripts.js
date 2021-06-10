@@ -15,7 +15,7 @@ var UI = {
 	menuPrimary: '#nav-primary',
 	menuActiveClass: 'open',
 	toggleMenu: function ( element ){
-		var button = $(element);
+		var button = $('.menu-toggle');
 
 		if ( button.hasClass( this.menuActiveClass ) ) {
 			button.removeClass( this.menuActiveClass );

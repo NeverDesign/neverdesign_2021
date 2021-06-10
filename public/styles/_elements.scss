@@ -16,61 +16,175 @@
 
 // SECTIONS //
 .section {
-	padding-top: $space-xxxl;
-	padding-bottom: $space-xxxl;
+	padding-top: $space-xxxl * 1.5;
+	padding-bottom: $space-xxxl * 1.5;
 	position: relative;
 }
 
 .section-hero {
+	background: $black;
 	margin-bottom: $space-xxl;
+	color: $white;
+	padding: 0;
 
-	.title {
+	.hero-inner-animation {
+		background: transparentize($grey-medium, 0.5);
+		overflow: hidden;
+		position: absolute;
+			left: 0;
+			right: 0;
+			z-index: 0;
+		height: 300px;
 		display: flex;
-			justify-content: center;
-			align-items: center;
-		font-size: 2.2em;
-		line-height: 1.2em;
+			flex-direction: row;
+			flex-wrap: nowrap;
 
-		b {
-			font-weight: 700;
+		.text-band {
+			color: $gray-500;
+			font-size: 20vh;
+			font-weight: 500;
+			white-space: nowrap;
+			filter: blur(20px);
+			position: absolute;
+				left: 50%;
+			opacity: 0.5;
+			animation: 100s infinite linear scrollText;
 		}
 
-		div:first-child {
-			span {
-				display: inline-block;
-				padding: 0 $space-sm;
+		@keyframes scrollText {
+			from { left: 50%; } to { left: -400% }
+		}
+
+		.colour-band {
+			content: ' ';
+			background: $red;
+			width: 100%;
+			height: 50%;
+			position: absolute;
+				bottom: -45%;
+				z-index: 2;
+				width: 110%;
+			// animation: 100s infinite ease-in-out moveColourBand;
+			transform: rotate(-4deg)
+		}
+
+		@keyframes moveColourBand {
+			0% { bottom: -50%; } 
+			50% { bottom: -20%; }
+			100% { bottom: -50%; } 
+		}
+	}
+
+	.hero-inner-primary {
+		padding: $space-xxxl * 2 0 $space-xxl;
+		position: relative;
+			z-index: 1;
+		height: 300px;
+		line-height: 1.2;
+		text-align: center;
+
+		span {
+			font-size: 1.8em;
+		}
+
+		b {
+			font-size: 3em;
+		}
+
+		@include media-breakpoint-up(sm){
+			text-align: left;
+		}
+	}
+
+	.hero-inner-secondary {
+		background: $black;
+		position: relative;
+		padding: $space-xl 0;
+
+		$height: 35px;
+		&:before {
+			content: ' ';
+			background-image: linear-gradient(to right top, $black 0%, $black 49%, transparent 51%);
+			width: 100%;
+			height: $height;
+			position: absolute;
+			top: -$height;
+			z-index: 1;
+		}
+
+		&:after {
+			content: ' ';
+			background-image: linear-gradient(to right bottom, $black 0%, $black 49%, transparent 51%);
+			width: 100%;
+			height: $height;
+			position: absolute;
+			bottom: -$height;
+			z-index: 1;
+		}
+
+		.container {
+			& > div {
+				font-size: $h4-font-size;
+				line-height: 1.4;
+				margin-right: $space-lg;
+				text-align: center;
+
+				&:last-child {
+					margin-bottom: 0
+				 }
 			}
 		}
 
-		div:last-child {
-			font-weight: 300;
+		@include media-breakpoint-up(sm){
+			.container {
+				display: flex;
 
-			span {
-				display: block;
+				& > div {
+					text-align: left;
+				}
+			}
+		}
+
+		@include media-breakpoint-up(md){
+			.container {
+				& > div {
+					font-size: $h3-font-size;
+					line-height: 1.4;
+					margin-right: $space-xxl;
+				}
 			}
 		}
 	}
 
-	@include media-breakpoint-up(md){
-		.title {
-			font-size: 3.5em;
-		}
+	b {
+		font-family: $font-accent;
+		display: block;
 	}
 }
 
 .section-about {
 	margin-top: 0;
-	padding-top: $space-lg;
-	background: $grey-medium;
+	padding: $space-xxl 0 $space-xxl;
+	background: $white;
 
+	$height: 35px;
 	&:before {
-		$height: 35px;
 		content: ' ';
-		background-image: linear-gradient(to left top, $grey-medium 0%, $grey-medium 50%, transparent 50%);
+		background-image: linear-gradient(to left top, $white 0%, $white 50%, transparent 50%);
 		width: 100%;
 		height: $height;
 		position: absolute;
 		top: -$height;
+		z-index: 1;
+	}
+
+	&:after {
+		content: ' ';
+		background-image: linear-gradient(to left bottom, $white 0%, $white 49%, transparent 51%);
+		width: 100%;
+		height: $height;
+		position: absolute;
+		bottom: -$height;
 		z-index: 1;
 	}
 
@@ -90,6 +204,10 @@
 		}
 	}
 
+	.header {
+		margin-bottom: $space-md;
+	}
+
 	@include media-breakpoint-up(md){
 		margin-top: $space-lg;
 		padding-top: $space-xxl;
@@ -101,7 +219,8 @@
 }
 
 .section-folio {
-	background: $grey-light;
+	background: $black;
+	color: $white;
 
 	.collection {
 		max-width: 100%;
@@ -111,7 +230,7 @@
 		padding-bottom: $space-lg;
 	}
 
-	@include media-breakpoint-up(md){
+	@include media-breakpoint-up(lg){
 		.collection {
 			max-width: 90%;
 			margin: 0 auto;
@@ -120,14 +239,15 @@
 }
 
 .section-skills {
-	background: $grey-medium;
+	background: $black;
+	color: $white;
 }
 
 .section-contact {
 	&:before {
 		$height: 35px;
 		content: ' ';
-		background-image: linear-gradient(to left top, $grey-darkest 0%, $grey-darkest 50%, transparent 50%);
+		background-image: linear-gradient(to left top, $white 0%, $white 49%, transparent 51%);
 		width: 100%;
 		height: $height;
 		position: absolute;
@@ -135,8 +255,16 @@
 		z-index: 1;
 	}
 
+	.header {
+		font-size: 2em;
+
+		.title {
+			font-size: $h1-font-size;
+		}
+	}
+
 	.collection {
-		justify-content: center;
+		// justify-content: center;
 	}
 }
 
@@ -179,13 +307,73 @@
 	}
 }
 
+// MOBILE MENU TOGGLE //
+.mobile-menu-toggle {
+	margin-bottom: $space;
+	display: flex;
+		justify-content: center;
+	position: fixed;
+		bottom: $space-xxl;
+		z-index: 15;
+	width: 100%;
+
+	.menu-toggle {
+		background: $primary;
+		text-align: center;
+		width: 64px;
+		height: 64px;
+		border-radius: 999px;
+		display: flex;
+			flex-direction: column;
+		line-height: 1.3;
+		box-shadow: 0px 0px 5px transparentize($black, 0.4);
+
+		.menu-icon {
+			margin: $space-xs auto 0;
+		}
+
+		.text {
+			display: block;
+			font-size: $font-size-sm
+		}
+
+		&:hover {
+			background: darken($primary, 20%);
+		}
+
+		&.open,
+		&:hover {
+			color: $white;
+
+			.menu-icon span {
+				background-color: $white;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		display: none;
+	}
+}
+
+
 // FOOTER //
 footer {
 	.footer-inner {
-		padding-top: $space-md;
-		padding-bottom: $space-md;
+		margin-top: -$space-xxl;
+		padding-top: $space-xl;
+		padding-bottom: $space-xl;
 		text-align: center;
 		font-size: $font-size-sm;
-		color: lighten($grey-light, 35%);
+		color: $grey-light;
+		border-top: 1px solid $grey-lightest;
+		max-width: 700px;
+	}
+
+	@include media-breakpoint-up(md) {
+		.footer-inner {
+			margin-top: 0;
+			padding-top: $space-xl;
+		}
 	}
 }

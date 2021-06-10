@@ -1,6 +1,7 @@
 // Settings.scss
 
 // Shades
+$black:         #000000;
 $grey-darkest:	#141b22;
 $grey-medium:	#1b242e;
 $grey-light:	#323d48;
@@ -27,13 +28,15 @@ $space-xl:		$space*2;		// 48px
 $space-xxl:		$space*3.25;	// 64px
 $space-xxxl:	$space*4;		// 80px
 
-$container-width-narrow: 900px;
+$container-width-narrow: 700px;
 
 /**
  * Bootstrap Overrides
  */
-$body-color:				$white;
-$body-bg:					$grey-darkest;
+$body-color:				$black;
+$body-bg:					$white;
 
 $font-family-base:			$font-standard;
 $font-weight-base:			300;
+
+$line-height-base:          1.8;

@@ -54,57 +54,62 @@
 
 {% set clients = [
 	{
+		"label": "Mobility Quotient",
+		"image": "/images/clients/black/mq.png",
+		"url": "",
+	},
+	{
 		"label": "Winsight",
-		"image": "/images/clients/winsight.png",
+		"image": "/images/clients/black/winsight.png",
 		"url": "",
 	},
 	{
 		"label": "Technomic",
-		"image": "/images/clients/technomic.png",
+		"image": "/images/clients/black/technomic.png",
 		"url": "",
 	},
 	{
 		"label": "Compliance Safe",
-		"image": "/images/clients/compliance-safe.png",
-		"url": "",
-	},
-	{
-		"label": "Meticulon",
-		"image": "/images/clients/meticulon.png",
+		"image": "/images/clients/black/compliance-safe.png",
 		"url": "",
 	},
 	{
 		"label": "Patch",
-		"image": "/images/clients/patch.png",
+		"image": "/images/clients/black/patch.png",
 		"url": "",
 	},
 ] %}
 
 {% block content %}
 	<section class="section section-hero" data-anchor="true">
-		<div class="container-scrolling-text">
-			<span>Hi, my name is Jon. I am a UX/UI Designer and a Front End Developer. This is my portfolio.</span>
+		<div class="hero-inner hero-inner-animation">
+			<div class="text-band">Hi, my name is Jon. I am a UX/UI Designer and a Front End Developer. This is my portfolio.</div>
+			<div class="colour-band"></div>
 		</div>
 
-		<div class="hero-inner container-primary container">
-			<h1 class="visually-hidden">Welcome to NeverDesign.net&mdash;The portfolio website of Jon De Araujo</h1>
+		<div class="hero-inner hero-inner-primary">
+			<div class="container width-narrow">
+				<h1 class="visually-hidden">Welcome to NeverDesign.net&mdash;The portfolio website of Jon De Araujo</h1>
 
-			<div class="title">
-				<div>
-					<span>Hi, my name is</span>
-					<b>Jon.</b>
+				<div class="title">
+					<div>
+						<span>Hi, my name is</span>
+						<b>Jon.</b>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="hero-inner container-secondary container">
-			<div>
-				<span>I'm a</span>
-				<b>UX/UI Designer</b>
-			</div>
-			<div>
-				<span>and a</span>
-				<b>Front End Developer</b>
+		
+		<div class="hero-inner hero-inner-secondary">
+			<div class="container width-narrow">
+				<div>
+					<span>I'm a</span>
+					<b>UX/UI Designer</b>
+				</div>
+				<div>
+					<span>and a</span>
+					<b>Front End Developer</b>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -128,8 +133,8 @@
 		<div class="section-inner">
 			<div class="text-center">
 				<div class="header">
-					<span class="pre-title"></span>
-					<h2 class="title">Folio</h2>
+					<span class="pre-title">Check out</span>
+					<h2 class="title">some of my work</h2>
 				</div>
 			</div>
 
@@ -153,7 +158,7 @@
 
 								<p><a href="{{ item.url }}" class="btn btn-outline-primary-white" target="_blank" rel="noreferrer">Visit Site</a></p>
 
-								<h4 class="h6 text-uppercase fw-bolder">Contributions</h4>
+								<h4 class="h6 text-uppercase fw-bolder mt-4">Contributions</h4>
 								<p>
 									{% for task in item.tasks %}
 										<span class="badge bg-grey-lightest text-grey-darkest">{{ task }}</span>
@@ -181,8 +186,8 @@
 		<div class="section-inner">
 			<div class="text-center">
 				<div class="header">
-					<span class="pre-title">Here are some</span>
-					<h2 class="title">Brands I've worked with</h2>
+					<span class="pre-title">These are the</span>
+					<h2 class="title">brands I work with</h2>
 				</div>
 			</div>
 
@@ -276,10 +281,10 @@
 
 	<section id="contact" class="section section-contact" data-anchor="true">
 		<div class="section-inner container width-narrow">
-			<div class="text-center">
+			<div class="text-left">
 				<div class="header">
-					<span class="pre-title">Why not</span>
-					<h2 class="title">say hello.</h2>
+					<span class="pre-title">If you want to</span>
+					<h2 class="title">get in touch.</h2>
 				</div>
 			</div>
 
@@ -309,7 +314,11 @@
 				<div class="item item-social">
 					<div class="item-inner">
 						<a aria-label="Send a message" href="#" class="item-content" onclick="UI.sendMessage(); return false;">
-							<span class="icon icon-chat"></span>
+							<div class="wrapper-icon">
+								<span class="icon icon-chat"></span>
+							</div>
+
+							<p>Send me an <b>email</b></p>
 						</a>
 					</div>
 				</div>
@@ -317,18 +326,38 @@
 				<div class="item item-social">
 					<div class="item-inner">
 						<a aria-label="LinkedIn" href="https://www.linkedin.com/in/jon-de-araujo-7a767241" rel="noreferrer" class="item-content" target="_blank">
-							<span class="icon icon-linkedin-square"></span>
+							<div class="wrapper-icon">
+								<span class="icon icon-linkedin-square"></span>
+							</div>
+
+							<p>Say hi on <b>LinkedIn</b></p>
 						</a>
 					</div>
 				</div>
 
 				<div class="item item-social">
 					<div class="item-inner">
-						<a aria-label="Github" href="https://github.com/neverdesign" class="item-content" rel="noreferrer" target="_blank">
-							<span class="icon icon-git-square"></span>
+						<a aria-label="Github" href="https://instagram.com/refresh.ink" class="item-content" rel="noreferrer" target="_blank">
+							<div class="wrapper-icon">
+								<span class="icon icon-instagram"></span>
+							</div>
+
+							<p>See my <b>artwork</b></p>
 						</a>
 					</div>
 				</div>
+
+				{# <div class="item item-social">
+					<div class="item-inner">
+						<a aria-label="Github" href="https://github.com/neverdesign" class="item-content" rel="noreferrer" target="_blank">
+							<div class="wrapper-icon">
+								<span class="icon icon-git-square"></span>
+							</div>
+
+							<p>Check out my <b>repo</b></p>
+						</a>
+					</div>
+				</div> #}
 			</div>
 		</div>
 	</section>

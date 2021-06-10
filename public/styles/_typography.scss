@@ -6,12 +6,11 @@
 .section {
 	.header {
 		display: inline-block;
-		border-bottom: 2px solid $primary;
-		margin-bottom: $space-md;
+		margin-bottom: $space-xxl;
 
 		.title {
-			font-size: $h5-font-size;
-			text-transform: uppercase;
+			font-size: $h3-font-size;
+			font-family: $font-serif;
 			font-weight: 600;
 			margin-bottom: $space-xs;
 		}
@@ -27,11 +26,14 @@
 
 // LISTS //
 .list-skills {
+	margin-left: auto;
+	margin-right: auto;
 	padding: 0;
 	list-style: none;
+	max-width: 95%;
 
 	li {
-		border-bottom: 1px dotted $grey-light;
+		border-bottom: 1px dotted $gray-600;
 		display: flex;
 			justify-content: space-between;
 		padding-bottom: $space-sm;
@@ -43,6 +45,7 @@
 	}
 
 	@include media-breakpoint-up(md){
+		max-width: none;
 		margin: 0 $space-xl 0 0;
 	}
 }
