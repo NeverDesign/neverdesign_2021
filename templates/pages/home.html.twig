@@ -82,37 +82,41 @@
 
 {% block content %}
 	<section class="section section-hero" data-anchor="true">
-		<div class="hero-inner container">
+		<div class="container-scrolling-text">
+			<span>Hi, my name is Jon. I am a UX/UI Designer and a Front End Developer. This is my portfolio.</span>
+		</div>
+
+		<div class="hero-inner container-primary container">
 			<h1 class="visually-hidden">Welcome to NeverDesign.net&mdash;The portfolio website of Jon De Araujo</h1>
 
 			<div class="title">
 				<div>
-					<b>UX/UI</b>
-					<span class="fw-bold text-red">+</span>
+					<span>Hi, my name is</span>
+					<b>Jon.</b>
 				</div>
-				<div>
-					<span class="text-label text-first">Designer<b class="text-red">.</b></span>
-					<span class="text-label text-last">Developer<b class="text-red">.</b></span>
-				</div>
+			</div>
+		</div>
+
+		<div class="hero-inner container-secondary container">
+			<div>
+				<span>I'm a</span>
+				<b>UX/UI Designer</b>
+			</div>
+			<div>
+				<span>and a</span>
+				<b>Front End Developer</b>
 			</div>
 		</div>
 	</section>
 
 	<section id="about" class="section section-about" data-anchor="true">
-		<div class="section-inner container width-narrow">
+		<div class="section-inner container width-narrow text-center">
 			<div class="row">
-				<div class="col-12 col-md-4 d-flex align-items-center">
-					<div class="container-image">
-						<img class="img-profile" src="/images/profile.png" alt="Jon De Araujo - Profile Picture" width="200" height="200" />
-					</div>
-				</div>
-				<div class="col-12 col-md-8">
+				<div class="col-12">
 					<div class="header">
-						<h2 class="title">About</h2>
+						<h2 class="title">I create imaginative, thoughtful and accessible digital experiences.</h2>
 					</div>
-
 					<div class="content">
-						<p class="h3 fw-light">I create imaginative, thoughtful and accessible digital experiences.</p>
 						<p>Hi, my name is Jon. I’m a UX/UI Designer and developer. I’m a passionate designer and a creative at heart wise in the ways of UX/UI and skilled in design and development principals. Since finishing a Bachelors Degree in Creative Industries (Communication Design) in 2007 I have worked in the industry at a wide variety of organizations internationally and freelanced in-between. </p>
 					</div>
 				</div>
@@ -124,6 +128,7 @@
 		<div class="section-inner">
 			<div class="text-center">
 				<div class="header">
+					<span class="pre-title"></span>
 					<h2 class="title">Folio</h2>
 				</div>
 			</div>
@@ -169,10 +174,15 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
+		</div>
+	</section>
 
-			<div class="text-center pt-4">
+	<section id="clients" class="section section-clients" data-anchor="true">
+		<div class="section-inner">
+			<div class="text-center">
 				<div class="header">
-					<h4 class="title">Brands I've worked with</h4>
+					<span class="pre-title">Here are some</span>
+					<h2 class="title">Brands I've worked with</h2>
 				</div>
 			</div>
 
@@ -194,7 +204,8 @@
 		<div class="section-inner container">
 			<div class="text-center">
 				<div class="header">
-					<h2 class="title">Skills</h2>
+					<h2 class="title">What I'm good at&hellip;</h2>
+					<span class="pre-title">and maybe not so good at</span>
 				</div>
 			</div>
 
@@ -212,7 +223,7 @@
 						<li><p>UX Mock-ups</p> <p>10<sub>/10</sub></p></li>
 						<li><p>Adobe PhotoShop</p> <p>9<sub>/10</sub></p></li>
 						<li><p>Adobe Illustrator</p> <p>9<sub>/10</sub></p></li>
-						<li><p>Adobe XD</p> <p>8.5<sub>/10</sub></p></li>
+						<li><p>Adobe XD</p> <p>8<sub>/10</sub></p></li>
 						<li><p>Adobe InDesign</p> <p>8<sub>/10</sub></p></li>
 					</ul>
 				</div>
@@ -229,10 +240,10 @@
 						<li><p>JS</p> <p>9<sub>/10</sub></p></li>
 						<li><p>Typescript</p> <p>7<sub>/10</sub></p></li>
 						<li><p>jQuery</p> <p>9<sub>/10</sub></p></li>
-						<li><p>Angular.js</p> <p>8<sub>/10</sub></p></li>
+						<li><p>Angular.js</p> <p>7<sub>/10</sub></p></li>
 						<li><p>React</p> <p>7<sub>/10</sub></p></li>
 						<li><p>PHP</p> <p>9<sub>/10</sub></p></li>
-						<li><p>Twig</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Twig</p> <p>9<sub>/10</sub></p></li>
 						<li><p>Symfony</p> <p>8<sub>/10</sub></p></li>
 					</ul>
 				</div>
@@ -244,15 +255,15 @@
 					</h3>
 					<ul class="list-skills">
 						<li><p>Icon Fonts</p> <p>10<sub>/10</sub></p></li>
-						<li><p>Google Lighthouse</p> <p>10<sub>/10</sub></p></li>
+						<li><p>Google Lighthouse</p> <p>9<sub>/10</sub></p></li>
 						<li><p>MacOS</p> <p>10<sub>/10</sub></p></li>
 						<li><p>Windows</p> <p>9<sub>/10</sub></p></li>
-						<li><p>Linux</p> <p>8<sub>/10</sub></p></li>
+						<li><p>Linux</p> <p>7<sub>/10</sub></p></li>
 						<li><p>Git/SVN</p> <p>9<sub>/10</sub></p></li>
-						<li><p>Codekit</p> <p>9<sub>/10</sub></p></li>
-						<li><p>SEO (OG, JSONLD, AMP)</p> <p>9<sub>/10</sub></p></li>
-						<li><p>DQL/SQL</p> <p>9<sub>/10</sub></p></li>
-						<li><p>CMS - WP, Bolt, Drupal</p> <p>8<sub>/10</sub></p></li>
+						<li><p>Codekit</p> <p>8<sub>/10</sub></p></li>
+						<li><p>SEO (OG, JSONLD, AMP)</p> <p>8<sub>/10</sub></p></li>
+						<li><p>DQL/SQL</p> <p>4<sub>/10</sub></p></li>
+						<li><p>CMS - WP, Bolt, Drupal</p> <p>7<sub>/10</sub></p></li>
 
 						{# <li><p>AWS - S3</p> <p>10/10</p></li> #}
 						{# <li><p>Azure</p> <p>10/10</p></li> #}
@@ -267,7 +278,8 @@
 		<div class="section-inner container width-narrow">
 			<div class="text-center">
 				<div class="header">
-					<h2 class="title">Say Hello</h2>
+					<span class="pre-title">Why not</span>
+					<h2 class="title">say hello.</h2>
 				</div>
 			</div>
 
