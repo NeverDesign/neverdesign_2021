@@ -41,6 +41,9 @@ var UI = {
 		var message = 'Hi Jon, I am [replace me with your name] and I just wanted to say...';
 
 		window.location.href = `mailto:${emailPrefix}@neverdesign.net?subject=${subject}&body=${message}`;
+	},
+	scrollToTop: function(){
+		$(window).scrollTop(0);
 	}
 }; // End UI Prototype
 

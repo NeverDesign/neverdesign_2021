@@ -46,13 +46,13 @@
 			white-space: nowrap;
 			filter: blur(20px);
 			position: absolute;
-				left: 50%;
+				left: 10%;
 			opacity: 0.5;
 			animation: 100s infinite linear scrollText;
 		}
 
 		@keyframes scrollText {
-			from { left: 50%; } to { left: -400% }
+			from { left: 0%; } to { left: -400% }
 		}
 
 		.colour-band {
@@ -108,7 +108,7 @@
 			width: 100%;
 			height: $height;
 			position: absolute;
-			top: -$height;
+			top: -$height + 1;
 			z-index: 1;
 		}
 
@@ -238,12 +238,20 @@
 	}
 }
 
+.section-clients {
+	.collection {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .section-skills {
 	background: $black;
 	color: $white;
 }
 
 .section-contact {
+	
 	&:before {
 		$height: 35px;
 		content: ' ';
@@ -257,6 +265,9 @@
 
 	.header {
 		font-size: 2em;
+		line-height: 1.2;
+		text-align: center;
+		width: 100%;
 
 		.title {
 			font-size: $h1-font-size;
@@ -265,6 +276,12 @@
 
 	.collection {
 		// justify-content: center;
+	}
+
+	@include media-breakpoint-up(md){
+		.header {
+			text-align: left;
+		}
 	}
 }
 
@@ -375,5 +392,11 @@ footer {
 			margin-top: 0;
 			padding-top: $space-xl;
 		}
+	}
+}
+
+.hidden-md-up {
+	@include media-breakpoint-up(md){
+		display: none;;
 	}
 }
