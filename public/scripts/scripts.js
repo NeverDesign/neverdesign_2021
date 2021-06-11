@@ -44,7 +44,6 @@ var UI = {
 	},
 	scrollToTop: function(){
 		$(window).scrollTop(0);
-		UI.dismissMenu();
 	}
 }; // End UI Prototype
 
