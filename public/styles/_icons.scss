@@ -1,7 +1,7 @@
 // Icons.scss
 
 @font-face {
-    $version: 1;
+    $version: 2;
     $fontPath: '../fonts/icons-v#{$version}';
     font-family: 'nd-icons';
     font-display: swap;
@@ -86,4 +86,19 @@
 }
 .icon-facebook-official:before {
   content: "\f230";
+}
+.icon-cart:before {
+  content: "\e93a";
+}
+.icon-display:before {
+  content: "\e956";
+}
+.icon-mobile:before {
+  content: "\e958";
+}
+.icon-tablet:before {
+  content: "\e95a";
+}
+.icon-spinner2:before {
+  content: "\e97b";
 }
