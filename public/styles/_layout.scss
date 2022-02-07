@@ -6,7 +6,7 @@ body {
 	min-width: 320px;
 
 	&.menu-open {
-		position: absolute;
+		position: fixed;
 		width: 100%;
 
 		#header {
