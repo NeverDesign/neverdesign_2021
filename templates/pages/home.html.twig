@@ -69,6 +69,16 @@
 		"url": "",
 	},
 	{
+		"label": "Sentio",
+		"image": "/images/clients/black/sentio.png",
+		"url": "",
+	},
+	{
+		"label": "Meticulon",
+		"image": "/images/clients/black/meticulon.png",
+		"url": "",
+	},
+	{
 		"label": "Compliance Safe",
 		"image": "/images/clients/black/compliance-safe.png",
 		"url": "",
@@ -114,7 +124,6 @@
 			</div>
 		</div>
 	</section>
-
 	
 	<section class="section section-about" data-anchor="true">
 		<div class="section-inner container width-narrow text-center">
@@ -125,6 +134,36 @@
 					</div>
 					<div class="content">
 						<p>Hi, my name is Jon. I’m a UX/UI Designer and developer. I’m a passionate designer and a creative at heart wise in the ways of UX/UI and skilled in design and development principals. Since finishing a Bachelors Degree in Creative Industries (Communication Design) in 2007 I have worked in the industry at a wide variety of organizations internationally and freelanced in-between. </p>
+						{# <p><button class="btn btn-sm btn-secondary" role="button" data-bs-toggle="modal" data-bs-target="#additionalAbout">Read More</button></p> #}
+					</div>
+
+					<div class="content about-more d-none">
+						<p class="h5 text-center font-accent">My Role</p>
+						<p class="text-start">I'm currently building great things with <a href="https://mobilityquotient.com">Mobility Quotient</a> in the role of Front End Developer Team Lead. The role involves overseeing, managing and being involved in almost all UX/UI development across the company. I spend my days designing, developing and testing and when I'm not doing those I am helping my team succeed or interacting with clients.
+						I work closely with our design team and back end developer team to bring projects to life. The role is challenging and rewarding. I started out as a designer and front end developer and am now the Front End Developer team lead. I'm still heavily responsible for UX/UI design and implementation.</p>
+
+						<p class="h5 text-center font-accent">My accomplishments</p>
+						<div class="row text-start">
+							<div class="col-12 col-md-6">
+								<p>I've helped create a totally custom tool to help individuals and families with Autism lead successful lives and advance in their careers and personal goals. I've mentored 
+								individuals from all walks of life including those with learning difficulties. 
+								Building a custom learning management tool encouraged me to approach site design and integration differently. Being a part of a team that builds custom tooling 
+								for industries ranging from automotive to food and beverage, document compliance to hyper-local news and even a local business search engine.</p>
+							</div>
+
+							<div class="col-12 col-md-6">
+								<p>During my time in my current role I have brought about company wide change to implement and formalize the business processes involved in getting a project from concept to completion. I've been responsible for optimizing the tooling and 
+							development practices for front end, UX and UI development at the company. On top of this I have also been largely responsible for creating the front end infrastructure that allows MQ to successfully turn around custom systems for small, medium
+							and large scale projects.</p>
+							</div>
+						</div>
+
+						<p class="h5 text-center font-accent mt-2">Need more details?</p>
+						<p>Most of the work I do in my current role involves creating both public facing and protected experiences and given the nature of those projects and sensitivity of client data. Please don't hesitate to <a href="#contact">say hello</a> for more information.</p>
+					</div>
+
+					<div class="content">
+						<p><button class="btn btn-sm btn-secondary" role="button" onclick="UI.toggleMoreText(this);" data-target=".about-more">Read More</button></p>
 					</div>
 				</div>
 			</div>
@@ -185,7 +224,7 @@
 	</section>
 
 	<section id="clients" class="section section-clients" data-anchor="true">
-		<div class="section-inner">
+		<div class="section-inner container width-standard">
 			<div class="text-center">
 				<div class="header">
 					<span class="pre-title">These are the</span>
@@ -373,4 +412,8 @@
 			</div>
 		</div>
 	</section>
+
+	{# About Modal #}
+	{% include 'partials/modal-about.html.twig' %}
+
 {% endblock content %}

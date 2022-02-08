@@ -6,10 +6,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class SiteController extends AbstractController
 {
 	/**
-	 * @Route("/", name="page_home")
+	 * @Route("/", name="page_home", methods={"GET"})
 	 */
 	public function homeAction() {
 		$parameters = array();
@@ -18,19 +19,6 @@ class SiteController extends AbstractController
 		}
 		finally {
 			return $this->render('pages/home.html.twig', $parameters);
-		}
-	}
-
-	/**
-	 * @Route("/case-studies", name="page_case-studies")
-	 */
-	public function caseStudiesAction() {
-		$parameters = array();
-		try {
-			$template = 'pages/case-studies.html.twig';
-		}
-		finally {
-			return $this->render($template, $parameters);
 		}
 	}
 }

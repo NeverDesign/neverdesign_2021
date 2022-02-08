@@ -45,6 +45,22 @@ var UI = {
 	scrollToTop: function(){
 		$(window).scrollTop(0);
 		UI.dismissMenu();
+	},
+	toggleMoreText: function( element ){
+		var btn = $(element);
+		var target = btn.data('target');
+		var hiddenClass = 'd-none';
+
+		console.log('target: ', target );
+		if( $(target).hasClass(hiddenClass) ){
+			$(target).removeClass(hiddenClass);
+			btn.text('Show Less');
+		}
+		else {
+			$(target).addClass(hiddenClass);
+			btn.text('Read More');
+		}
+
 	}
 }; // End UI Prototype
 
