@@ -50,15 +50,17 @@ var UI = {
 		var btn = $(element);
 		var target = btn.data('target');
 		var hiddenClass = 'd-none';
+		var moreText = btn.data('more');
+		var lessText = btn.data('less')
 
 		console.log('target: ', target );
 		if( $(target).hasClass(hiddenClass) ){
 			$(target).removeClass(hiddenClass);
-			btn.text('Show Less');
+			btn.text(lessText);
 		}
 		else {
 			$(target).addClass(hiddenClass);
-			btn.text('Read More');
+			btn.text(moreText);
 		}
 
 	}
